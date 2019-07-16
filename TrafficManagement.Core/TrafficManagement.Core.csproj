@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02EB0B3B-5ED5-4B4C-9C1D-1F660A329B87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrafficManagement.Core</RootNamespace>
+    <AssemblyName>TrafficManagement.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CCSubmitDirect.cs" />
+    <Compile Include="Managers\ActionManager.cs" />
+    <Compile Include="Managers\ActionModel.cs" />
+    <Compile Include="Managers\LeadEntry.cs" />
+    <Compile Include="Managers\LeadManager.cs" />
+    <Compile Include="MobilePaywallLogDirect.cs" />
+    <Compile Include="PaywallDirect.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Undercover\BananaclicksApiBase.cs" />
+    <Compile Include="Undercover\BananaclicksUndercoverManager.cs" />
+    <Compile Include="Undercover\CCUndercoverAgent.cs" />
+    <Compile Include="Undercover\DollarConversion.cs" />
+    <Compile Include="Undercover\UndercoverResult.cs" />
+    <Compile Include="Web\CCSubmitCacheManager.cs" />
+    <Compile Include="Web\Controllers\CCSubmitApiController.cs" />
+    <Compile Include="Web\Controllers\CCSubmitController.cs" />
+    <Compile Include="Web\Controllers\Code\Filters\AllowCrossSiteAttribute.cs" />
+    <Compile Include="Web\Controllers\Code\LegacyBase.cs" />
+    <Compile Include="Web\Controllers\Code\LegacyCreateUser.cs" />
+    <Compile Include="Web\Controllers\Code\LegacySubscribe.cs" />
+    <Compile Include="Web\Controllers\Models\ControllerCreateUserModel.cs" />
+    <Compile Include="Web\Controllers\Models\ControllerEndFlowModel.cs" />
+    <Compile Include="Web\Controllers\Models\ControllerJsonResponse.cs" />
+    <Compile Include="Web\Controllers\Models\ControllerModelBase.cs" />
+    <Compile Include="Web\Controllers\Models\ControllerRedirectionModel.cs" />
+    <Compile Include="Web\Controllers\Models\ControllerRedirectModel.cs" />
+    <Compile Include="Web\Controllers\Models\ControllerSubscribeModel.cs" />
+    <Compile Include="Web\Controllers\Postback\CCCashPostbackController.cs" />
+    <Compile Include="Web\Controllers\Postback\CloverdalePostbackController.cs" />
+    <Compile Include="Web\Controllers\Postback\DogbainPostbackController.cs" />
+    <Compile Include="Web\Controllers\Postback\InvoreakPostbackController.cs" />
+    <Compile Include="Web\Controllers\Postback\Models\CCCashPostbackControllerModel.cs" />
+    <Compile Include="Web\Controllers\Postback\Models\CloverdalePostbackControllerModel.cs" />
+    <Compile Include="Web\Controllers\Postback\Models\DogbainPostbackControllerModel.cs" />
+    <Compile Include="Web\Controllers\Postback\Models\InvoreakPostbackControllerModel.cs" />
+    <Compile Include="Web\Controllers\Postback\Models\_PostbackControllerModelBase.cs" />
+    <Compile Include="Web\Controllers\Postback\_PostbackControllerBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Direct\Direct.Core\Direct.Core.csproj">
+      <Project>{79bf132c-fe95-4096-8bed-7e981c50e71c}</Project>
+      <Name>Direct.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Web\Cache\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
